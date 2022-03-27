@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+    <bean id="sumProcessor" class="ru.learnUp.feb.SumProcessor"/>
+    <bean id="subtractProcessor" class="ru.learnUp.feb.SubtractProcessor"/>
+    <bean id="divideProcessor" class="ru.learnUp.feb.DivideProcessor"/>
+    <bean id="multiplyProcessor" class="ru.learnUp.feb.MultiplyProcessor"/>
+
+    <bean id="calculator" class="ru.learnUp.feb.Calculator">
+        <constructor-arg ref="sumProcessor"/>
+        <constructor-arg ref="subtractProcessor"/>
+        <constructor-arg ref="divideProcessor"/>
+        <constructor-arg ref="multiplyProcessor"/>
+    </bean>
+
+</beans>
